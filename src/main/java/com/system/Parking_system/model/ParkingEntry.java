@@ -17,7 +17,7 @@ public class ParkingEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "vehicle_number", nullable = false, unique = true)
+    @Column(nullable = false)
     private String vehicleNumber;
 
     @Enumerated(EnumType.STRING)

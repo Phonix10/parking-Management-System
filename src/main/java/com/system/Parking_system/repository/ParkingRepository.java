@@ -12,6 +12,7 @@ import com.system.Parking_system.model.VehicleType;
 @Repository
 public interface ParkingRepository extends JpaRepository<ParkingEntry,Long> {
     Optional<ParkingEntry> findByVehicleNumberAndExitTimeIsNull(String vehicleNumber);
+    
     long countByVehicleTypeAndExitTimeIsNull(VehicleType type);
     
 }
