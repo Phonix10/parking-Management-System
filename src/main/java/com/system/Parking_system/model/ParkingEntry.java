@@ -1,6 +1,6 @@
 package com.system.Parking_system.model;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
@@ -22,7 +22,7 @@ public class ParkingEntry {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private VeicleType vehicleType;
+    private VehicleType vehicleType;
 
     @Column(nullable = false)
     private LocalDateTime entryTime;
