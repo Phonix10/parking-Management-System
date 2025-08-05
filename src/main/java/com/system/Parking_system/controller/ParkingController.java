@@ -42,5 +42,12 @@ public class ParkingController {
     public Map<String, Long> getAvailableSlots() {
         return parkingService.getAvailableSlots();
     }
+
+    // Additional method to get all parked vehicles
+    @GetMapping("/parked-vehicles")
+    public ResponseEntity<?> getAllParkedVehicles() {
+        return ResponseEntity.ok(parkingService.getAllParkedVehicles());
+    }
+
     
 }

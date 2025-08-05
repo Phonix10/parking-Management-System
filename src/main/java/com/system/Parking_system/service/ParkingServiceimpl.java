@@ -2,6 +2,7 @@ package com.system.Parking_system.service;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,5 +96,19 @@ public class ParkingServiceimpl implements ParkingService{
         slots.put("4-wheeler", MAX_FOUR_WHEELER - fourWheelerCount);
         return slots;
     }
+
+    
+    @Override
+    public List<String> getAllParkedVehicles(){
+        return parkingRepository.findAll().stream().
+                filter(entry -> entry.getExitTime() == null)
+                .map(ParkingEntry::getVehicleNumber)
+                .toList();
+        
+    }
+
+
+
+    
     
 }
